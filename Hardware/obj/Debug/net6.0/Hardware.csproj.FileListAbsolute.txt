@@ -1,0 +1,15 @@
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\Hardware.exe
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\Hardware.deps.json
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\Hardware.runtimeconfig.json
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\Hardware.dll
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\ref\Hardware.dll
+C:\Users\nte\source\repos\Hardware\Hardware\bin\Debug\net6.0\Hardware.pdb
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.csproj.AssemblyReference.cache
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.AssemblyInfoInputs.cache
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.AssemblyInfo.cs
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.csproj.CoreCompileInputs.cache
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.dll
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\ref\Hardware.dll
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.pdb
+C:\Users\nte\source\repos\Hardware\Hardware\obj\Debug\net6.0\Hardware.genruntimeconfig.cache
