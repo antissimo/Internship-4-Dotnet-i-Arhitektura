@@ -11,26 +11,31 @@ namespace Presentation
         
         static void Main(string[] args)
         {
-            var CurrentUser=InitialOpening();
+            var nullUser=new User();
+            if (nullUser.DoesUserExists() == false)
+            { InitialOpening();
+              Console.WriteLine("Uspjesno ste se prijavili u sustav");
+            }
+
+            
             Console.Clear();
-            Console.WriteLine("Uspjesno ste se prijavili u sustav");
+            
             Console.WriteLine("Izaberite kojoj funkciji zelite pristupiti");
             Console.WriteLine("1-Sastavi i naruci novo racunalo");
             Console.WriteLine("2-Prikazi moje narudzbe");
             Console.WriteLine("3-Odjava");
+            Console.WriteLine("4-Zakljuci narudzbu");
             var selectionMain = Console.ReadLine();
-            Meni();
+            while(selectionMain!="1"&& selectionMain != "2" && selectionMain != "3" && selectionMain != "4")
+            {
+                Console.WriteLine("Neispravan unos molimo unesite broj od 1 do 4");
+                selectionMain = Console.ReadLine(); 
+            }
+            var domain = new Domain.Domain();
+            domain.Meni(selectionMain);
 
 
 
-            //switch (selectionMain)
-            //{
-            //    case "1":
-                    
-            //        break;
-            //    case "2"
-            //    case "3"
-            //}
 
 
 
@@ -47,6 +52,7 @@ namespace Presentation
             Console.WriteLine("Molimo upisite svoju adresu");
             var adress = Console.ReadLine();
             var CurrentUser = new User(name, surname, adress);
+            CurrentUser.UserExists();
             return CurrentUser;
 
         }

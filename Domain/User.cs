@@ -8,6 +8,8 @@ namespace Domain
 {
     public class User
     {
+        static int distanceFromUserOne=0;
+        static bool userExists = false;
         public String _Name { get; set; }
         public String _Surname { get; set; }
 
@@ -23,10 +25,28 @@ namespace Domain
             _Adress = Adress;
             _Distance = GenerateDistance();
         }
+        public User()
+        {
+            _Name = null;
+            _Surname = null;
+            _Adress = null;
+            _Distance = distanceFromUserOne;
+        }
         public int GenerateDistance()
         {
             Random rnd = new Random();
-            return (rnd.Next(50, 999));
+            int broj = rnd.Next(50, 999);
+            distanceFromUserOne = broj;
+            return (broj);
+           
+        }
+        public void UserExists()
+        {
+            userExists = true;  
+        }
+        public bool DoesUserExists()
+        {
+            return userExists;
         }
     }
 }
