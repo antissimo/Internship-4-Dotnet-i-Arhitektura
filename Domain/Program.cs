@@ -1,20 +1,17 @@
 ﻿using Data.NewFolder;
-using System.ComponentModel;
-
 namespace Domain
 {
-
     public class Domain
     {
         static void Main(string[] args)
         {
-             
-        }
 
+        }
         public void Meni(string choice)
         {
             Console.Clear();
-            switch (choice) {
+            switch (choice)
+            {
                 case "1":
                     MakeANewPc();
                     break;
@@ -167,7 +164,7 @@ namespace Domain
             var pc = new Computer();
             pc.PrintListOfPcs();
             pc.ClearList();
-            Console.WriteLine("Cijena za platiti je "+price);
+            Console.WriteLine("Cijena za platiti je " + price);
             Console.WriteLine("Zelite li izaci iz ducana(1) ili nastaviti kupovati(2)");
             var continueQuery = Console.ReadLine();
             while (continueQuery != "1" && continueQuery != "2")
@@ -182,15 +179,7 @@ namespace Domain
             return true;
 
         }
-
-
-
-
-
-
-
-        
-            public void MakeANewPc()
+        public void MakeANewPc()
         {
             var nullPc = new Computer();
             Console.Clear();
@@ -201,7 +190,7 @@ namespace Domain
             Console.WriteLine("3 - vrsta:Octa-core, proizvodjac:Intel, cijena:625kn");
             Console.WriteLine("4 - vrsta:Quad-core, proizvodjac:Intel, cijena:450kn");
             var processorQuery = Console.ReadLine();
-            while(processorQuery != "1" && processorQuery != "2" & processorQuery != "3" & processorQuery != "4")
+            while (processorQuery != "1" && processorQuery != "2" & processorQuery != "3" & processorQuery != "4")
             {
                 Console.WriteLine("Neispravan unos, molimo unesite broj od 1 do 4");
                 processorQuery = Console.ReadLine();
@@ -210,7 +199,7 @@ namespace Domain
             switch (processorQuery)
             {
                 case "1":
-                    processor = new Processor("AMD",10,900);
+                    processor = new Processor("AMD", 10, 900);
                     nullPc.AddToComponentCounter(processor);
                     break;
                 case "2":
@@ -248,16 +237,17 @@ namespace Domain
                 ramAmountQuery = Convert.ToInt32(Console.ReadLine());
             }
             Ram ram;
-            switch (ramQuery) {
-            case "1":
-                    ram = new Ram(ramAmountQuery,4,ramAmountQuery*150);
+            switch (ramQuery)
+            {
+                case "1":
+                    ram = new Ram(ramAmountQuery, 4, ramAmountQuery * 150);
                     nullPc.AddToComponentCounter(ram);
                     break;
-            case "2":
+                case "2":
                     ram = new Ram(ramAmountQuery, 8, ramAmountQuery * 250);
                     nullPc.AddToComponentCounter(ram);
                     break;
-            default:
+                default:
                     ram = new Ram(0, 0, 0);
                     break;
             }
@@ -294,7 +284,7 @@ namespace Domain
                     nullPc.AddToComponentCounter(hardDisk);
                     break;
                 default:
-                    hardDisk = new HardDisk("Null",0,0,0);
+                    hardDisk = new HardDisk("Null", 0, 0, 0);
                     break;
             }
             Console.Clear();
@@ -313,7 +303,7 @@ namespace Domain
             switch (caseQuery)
             {
                 case "1":
-                    case1 = new Case("Metal", 1.5,100);
+                    case1 = new Case("Metal", 1.5, 100);
                     nullPc.AddToComponentCounter(case1);
                     break;
                 case "2":
@@ -325,7 +315,7 @@ namespace Domain
                     nullPc.AddToComponentCounter(case1);
                     break;
                 default:
-                    case1 = new Case("Null",0,0);
+                    case1 = new Case("Null", 0, 0);
                     break;
             }
 
@@ -352,4 +342,3 @@ namespace Domain
 
 
 
-  

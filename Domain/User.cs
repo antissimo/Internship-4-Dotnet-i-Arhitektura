@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain
+﻿namespace Domain
 {
     public class User
     {
         static int currentlySpent = 0;
-        static int distanceFromUserOne=0;
+        static int distanceFromUserOne = 0;
         static bool userExists = false;
         public string _Name { get; set; }
         public string _Surname { get; set; }
@@ -17,8 +11,6 @@ namespace Domain
         public string _Adress { get; set; }
 
         public int _Distance { get; set; }
-
-
         public User(string Name, string Surname, string Adress)
         {
             _Name = Name;
@@ -39,11 +31,11 @@ namespace Domain
             int broj = rnd.Next(50, 999);
             distanceFromUserOne = broj;
             return (broj);
-           
+
         }
         public void UserExists()
         {
-            userExists = true;  
+            userExists = true;
         }
         public bool DoesUserExists()
         {

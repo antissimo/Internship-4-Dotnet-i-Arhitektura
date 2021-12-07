@@ -8,13 +8,6 @@ namespace Discount
         public void Main() {
             
         }
-       
-
-        
-
-        
-        
-       
         public int LoyaltyMemberDiscount(int CurrentPrice)
         {
             var nullUser = new User();
@@ -47,7 +40,7 @@ namespace Discount
             Console.Clear();
             Console.WriteLine("Upisite kod koji zelite iskoristiti");
             var discountCode = Console.ReadLine();  
-            while (DiscountCodeSeed.Any(stvar => stvar.Key == discountCode))
+            while (DiscountCodeSeed.Any(stvar => stvar.Key == discountCode)!=true)
             {
                 Console.WriteLine("Unijeli ste kod koji ne postoji, zelite li ponovno probati unijeti kod(1) ili nastaviti kupnju bez popusta(2)");
                 var discountQuery = Console.ReadLine(); 

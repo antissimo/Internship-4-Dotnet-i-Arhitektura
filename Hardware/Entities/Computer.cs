@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data.NewFolder
+﻿namespace Data.NewFolder
 {
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
     public class Computer
 
     {
@@ -56,16 +56,14 @@ namespace Data.NewFolder
             foreach (Computer pc in listOfPcs)
             {
                 Console.WriteLine("Lista dijelova ovog kompjutera:");
-                Console.WriteLine("Procesor:");
-                Console.WriteLine(pc._Cpu._Manufacturer + " " + pc._Cpu._NumberOfCores + " Cores");
-                Console.WriteLine("Ram:");
-                Console.WriteLine(pc._Ram._NumberOfGigaBytes + "GB X" + pc._Ram._NumberOfRams);
-                Console.WriteLine("Hard disk:");
-                Console.WriteLine(pc._Hdd._State + " " + pc._Hdd._Capacity + "TB ");
-                Console.WriteLine("Case:");
-                Console.WriteLine(pc._Case._Material);
+                Console.WriteLine("Procesor:"+pc._Cpu._Manufacturer + " " + pc._Cpu._NumberOfCores + " Cores");
+                Console.WriteLine("Ram:"+pc._Ram._NumberOfGigaBytes + "GB X" + pc._Ram._NumberOfRams);
+                Console.WriteLine("Hard disk:"+pc._Hdd._State + " " + pc._Hdd._Capacity + "TB ");
+                Console.WriteLine("Case:"+pc._Case._Material);
                 var cijena = pc.CalculatePrice();
                 Console.WriteLine("Cijena tog kompjutera je " + cijena);
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
                 ukupnaCijena += cijena;
             }
         }
@@ -91,6 +89,7 @@ namespace Data.NewFolder
         public void ClearList()
         {
             listOfPcs.Clear();
+            ComponentCounter.Clear();
         }
         public void AddToComponentCounter(Component component){
         if (ComponentCounter.Any(stvar => stvar.Key == component))
