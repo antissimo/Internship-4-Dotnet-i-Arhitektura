@@ -32,10 +32,30 @@ namespace Presentation
             Console.WriteLine("Dobrodosli u ovaj hardware shop");
             Console.WriteLine("Molimo upisite svoje ime");
             var name = Console.ReadLine();
+            while (name=="")
+            {
+                Console.Clear();
+                Console.WriteLine("Vase ime nam je potrebno,molimo ga upisite");
+                name = Console.ReadLine();
+            }
+            Console.Clear();
             Console.WriteLine("Molimo upisite svoje prezime");
             var surname = Console.ReadLine();
+            while (surname == "")
+            {
+                Console.Clear();
+                Console.WriteLine("Vase prezime nam je potrebno,molimo ga upisite");
+                surname = Console.ReadLine();
+            }
+            Console.Clear();
             Console.WriteLine("Molimo upisite svoju adresu");
             var adress = Console.ReadLine();
+            while (adress == "")
+            {
+                Console.Clear();
+                Console.WriteLine("Vasa adresa nam je potrebna,molimo je upisite");
+                adress = Console.ReadLine();
+            }
             var CurrentUser = new User(name, surname, adress);
             CurrentUser.UserExists();
             return CurrentUser;
