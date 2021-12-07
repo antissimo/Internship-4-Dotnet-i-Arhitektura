@@ -139,6 +139,9 @@
             "projectReferences": {
               "C:\\Users\\nte\\source\\repos\\Hardware\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\nte\\source\\repos\\Hardware\\Domain\\Domain.csproj"
+              },
+              "C:\\Users\\nte\\source\\repos\\Hardware\\Hardware\\Data.csproj": {
+                "projectPath": "C:\\Users\\nte\\source\\repos\\Hardware\\Hardware\\Data.csproj"
               }
             }
           }

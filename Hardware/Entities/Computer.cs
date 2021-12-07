@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 namespace Data.NewFolder
 {
     public class Computer
+
     {
+        static Dictionary<Component,int> ComponentCounter = new Dictionary<Component, int>();
+
         static List<Computer> listOfPcs = new List<Computer>();
         public Processor _Cpu { get; set; }
 
@@ -23,7 +26,7 @@ namespace Data.NewFolder
             _Ram = Ram;
             _Hdd = Hdd;
             _Case = Case;
-            
+
         }
         public Computer()
         {
@@ -35,39 +38,38 @@ namespace Data.NewFolder
 
         public int CalculatePrice()
         {
-            var ukupno=this._Cpu._Price+this._Ram._Price+this._Hdd._Price+this._Case._Price;
+            var ukupno = this._Cpu._Price + this._Ram._Price + this._Hdd._Price + this._Case._Price;
             return ukupno;
         }
         public double CalculateWeight()
         {
-            double tezina= this._Cpu._Weight + this._Ram._Weight + this._Hdd._Weight + this._Case._Weight;
+            double tezina = this._Cpu._Weight + this._Ram._Weight + this._Hdd._Weight + this._Case._Weight;
             return tezina;
         }
-        public void AddToListOfPcs() 
+        public void AddToListOfPcs()
         {
             listOfPcs.Add(this);
         }
         public void PrintListOfPcs()
         {
             var ukupnaCijena = 0;
-            foreach(Computer pc in listOfPcs)
+            foreach (Computer pc in listOfPcs)
             {
                 Console.WriteLine("Lista dijelova ovog kompjutera:");
                 Console.WriteLine("Procesor:");
-                Console.WriteLine(pc._Cpu._Manufacturer+" "+pc._Cpu._NumberOfCores+" Cores");
+                Console.WriteLine(pc._Cpu._Manufacturer + " " + pc._Cpu._NumberOfCores + " Cores");
                 Console.WriteLine("Ram:");
-                Console.WriteLine(pc._Ram._NumberOfGigaBytes+"GB X"+pc._Ram._NumberOfRams);
+                Console.WriteLine(pc._Ram._NumberOfGigaBytes + "GB X" + pc._Ram._NumberOfRams);
                 Console.WriteLine("Hard disk:");
-                Console.WriteLine(pc._Hdd._State+ " " + pc._Hdd._Capacity+ "TB ");
+                Console.WriteLine(pc._Hdd._State + " " + pc._Hdd._Capacity + "TB ");
                 Console.WriteLine("Case:");
                 Console.WriteLine(pc._Case._Material);
                 var cijena = pc.CalculatePrice();
                 Console.WriteLine("Cijena tog kompjutera je " + cijena);
                 ukupnaCijena += cijena;
             }
-            Console.WriteLine("Trenutna ukupna cijena je "+ukupnaCijena);
         }
-        public int  PriceOfAllPcs()
+        public int PriceOfAllPcs()
         {
             var totalPrice = 0;
             foreach (Computer pc in listOfPcs)
@@ -86,24 +88,32 @@ namespace Data.NewFolder
             }
             return totalWeight;
         }
-        //public int threeforpriceoftwo()
-        //{
-        //    bool flag;
-        //    int priceDeducted = 0;
-        //   Dictionary<Computer, int> pcDict = new Dictionary<Computer, int>();
-        //        foreach(var pc in listOfPcs)
-        //        {
-
-                
-        //            foreach(var key in pcDict.Keys)
-        //            {
-        //                if (pc._Cpu== key._Cpu)
-        //                {
-                        
-        //                }
-        //            }
-        //        }
-        //        return priceDeducted;
-        //    }
-       }
+        public void ClearList()
+        {
+            listOfPcs.Clear();
+        }
+        public void AddToComponentCounter(Component component){
+        if (ComponentCounter.Any(stvar => stvar.Key == component))
+            {
+                ComponentCounter[component]++;
+            }
+        else
+            {
+                ComponentCounter.Add(component, 1);
+            }
+        }
+        public int QuantityDiscount()
+        {
+            var reducedPrice = 0;
+            foreach (var keyValuePair in ComponentCounter)
+            {
+                if (keyValuePair.Value > 2)
+                {
+                    reducedPrice += keyValuePair.Key._Price;
+                }
+            }
+            return reducedPrice;
+        }
+    }
+        
 }

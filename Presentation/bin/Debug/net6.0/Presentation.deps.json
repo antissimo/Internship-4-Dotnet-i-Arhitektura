@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Presentation/1.0.0": {
         "dependencies": {
+          "Data": "1.0.0",
           "Domain": "1.0.0"
         },
         "runtime": {

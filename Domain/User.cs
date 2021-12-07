@@ -8,17 +8,18 @@ namespace Domain
 {
     public class User
     {
+        static int currentlySpent = 0;
         static int distanceFromUserOne=0;
         static bool userExists = false;
-        public String _Name { get; set; }
-        public String _Surname { get; set; }
+        public string _Name { get; set; }
+        public string _Surname { get; set; }
 
-        public String _Adress { get; set; }
+        public string _Adress { get; set; }
 
         public int _Distance { get; set; }
 
 
-        public User(String Name, String Surname, String Adress)
+        public User(string Name, string Surname, string Adress)
         {
             _Name = Name;
             _Surname = Surname;
@@ -47,6 +48,14 @@ namespace Domain
         public bool DoesUserExists()
         {
             return userExists;
+        }
+        public void AddToCurrentltySpent(int amountSpent)
+        {
+            currentlySpent += amountSpent;
+        }
+        public int GetCurrentlySpent()
+        {
+            return currentlySpent;
         }
     }
 }
